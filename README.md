@@ -18,6 +18,12 @@ Using GPIO25 pin to blinking the led 1sec intervally.
 #### Description
 Using DFRobot step motor to increasing the RPM, and report current RPM by ```std::cout```.
 ***
+### InfraredSensoring
+#### Description
+Using infrared sensor to check whether there are obstacles encountering, and using ```std::cout``` to show the status
+> 0: blocked
+> 1: clear
+***
 # Su-ao smart city live video monitoring system
 ## IPCam
 #### Locations:
