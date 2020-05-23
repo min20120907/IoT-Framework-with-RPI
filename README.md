@@ -27,9 +27,9 @@ Using infrared sensor to check whether there are obstacles encountering, and usi
 # Su-ao smart city live video monitoring system
 ## IPCam
 #### Locations:
-- Nanfangao Hwarf
-- Dongao Hwarf
-- Nanao Hwarf
+- Nanfangao Wharf
+- Dongao Wharf
+- Nanao Wharf
 - Other touring places
 - Safe guarding areas
 
