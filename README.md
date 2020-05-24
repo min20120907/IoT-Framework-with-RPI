@@ -5,6 +5,12 @@ IoT framework with raspberry pi
 - wiringPi
 - g++
 - build-essential
+### Equipments
+- Raspberry Pi 3B
+- IP Cam * n
+- Step Motor
+- Infrared Sensor
+
 ### Compile method (ex. stepMotor)
 ```bash
 g++ stepMotor.cpp -lwiringPi -lrt -lpthread -lcrypt -o stepMotor
