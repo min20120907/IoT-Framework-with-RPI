@@ -10,4 +10,5 @@ https://www.youtube.com/watch?v=zZ40o9QnoUY
 -------------------------------
 Documenttations about motorshield
 https://wiki.dfrobot.com/Arduino_Motor_Shield__L293___SKU__DRI0001_
+http://www.shieldlist.org/dfrobot/1a-motor
 ----------------
