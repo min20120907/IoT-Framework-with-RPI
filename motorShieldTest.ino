@@ -7,8 +7,15 @@ http://arduino.cc/en/Reference/AttachInterrupt
 const byte encoder0pinA = 2;//A pin -> the interrupt pin 2
 const byte encoder0pinB = 8;//B pin -> the digital pin 4
 byte encoder0PinALast;
+
+const byte encoder1pinA = 3;//A pin -> the interrupt pin 2
+const byte encoder1pinB = 9;//B pin -> the digital pin 4
+byte encoder1PinALast;
+
 int duration;//the number of the pulses
 boolean Direction;//the rotation direction
+int duration2;//the number of the pulses
+boolean Direction2;//the rotation direction
 //This motor shield use Pin 6,5,7,4 to control the motor
 // Simply connect your motors to M1+,M1-,M2+,M2-
 // Upload the code to Arduino/Roboduino
@@ -51,17 +58,23 @@ void setup()
     pinMode(i, OUTPUT);  //set pin 4,5,6,7 to output mode
   Serial.begin(57600);//Initialize the serial port
   EncoderInit();//Initialize the module
+  EncoderInit2();//Initialize the module
 }
-int j = 0;
+int j = 50;
 void loop()
 {
-  Motor1(100, true); //You can change the speed, such as Motor(50,true)
+  Motor1(j, true); //You can change the speed, such as Motor(50,true)
   Motor2(j, true);
   j++;
-  Serial.print("Pulse:");
+  Serial.print("Motor1 Pulse:");
   Serial.println(duration);
   duration = 0;
+  Serial.print("Motor2 Pulse:");
+  Serial.println(duration2);
+  duration2 = 0;
   delay(100);
+  if(j>200)
+    j=0;
 }
 
 void EncoderInit()
@@ -69,6 +82,12 @@ void EncoderInit()
   Direction = true;//default -> Forward
   pinMode(encoder0pinB,INPUT);
   attachInterrupt(0, wheelSpeed, CHANGE);//int.0
+}
+void EncoderInit2()
+{
+  Direction2 = true;//default -> Forward
+  pinMode(encoder1pinB,INPUT);
+  attachInterrupt(1, wheelSpeed2, CHANGE);//int.0
 }
 
 void wheelSpeed()
@@ -90,4 +109,25 @@ void wheelSpeed()
 
   if(!Direction)  duration++;
   else  duration--;
+}
+
+void wheelSpeed2()
+{
+  int Lstate = digitalRead(encoder1pinA);
+  if((encoder1PinALast == LOW) && Lstate==HIGH)
+  {
+    int val = digitalRead(encoder1pinB);
+    if(val == LOW && Direction2)
+    {
+      Direction2 = false; //Reverse
+    }
+    else if(val == HIGH && !Direction2)
+    {
+      Direction2 = true;  //Forward
+    }
+  }
+  encoder1PinALast = Lstate;
+
+  if(!Direction2)  duration2++;
+  else  duration2--;
 }
