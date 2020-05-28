@@ -5,6 +5,17 @@ IoT framework with raspberry pi
 - wiringPi
 - g++
 - build-essential
+### Raspberry Pi Server (Cluster)
+- Flask Server
+- Django Server
+- Modbus Server
+- FTP Server
+- MQTT Server
+- MariaDB Server
+### Raspbery Pi Optional Requirements
+- PHPMyadmin
+- PHP
+- Node Server
 ### Equipments
 - Raspberry Pi 3B
 - IP Cam * n
