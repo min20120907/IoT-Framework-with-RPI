@@ -5,6 +5,32 @@ IoT framework with raspberry pi
 - wiringPi
 - g++
 - build-essential
+### Raspberry Pi Databases
+* GPIO Accessors and Mutators (40-pins of raspberry pi)
+  - HIGH/LOW
+  - PWM frequency
+  - Physical Pin-out Graph
+  
+* Infrared Sensors
+  - Digital Sensor 1~20
+  - PPS Datas (Sensor1 ~ 20)
+  - Each Sensor's PPS would be logged into database
+  
+* Motors (1~3)
+  - Accessors and Mutators
+    - Motor PPS
+    - Motor RPM
+    - Motor Rounds
+    - Motor Angle
+
+* Voltage/Current Sensor
+  - Current
+  - Voltage
+
+* LCD Monitor
+  - setText
+  - getText
+  
 ### Raspberry Pi Server (Cluster)
 - Flask Server
 - Django Server
