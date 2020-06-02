@@ -42,6 +42,10 @@ IoT framework with raspberry pi
 - PHPMyadmin
 - PHP
 - Node Server
+### Web ui page
+- css grid layout
+- only looks rigiht now
+- yet to implement io with pi
 ### Equipments
 - Raspberry Pi 3B
 - IP Cam * n
